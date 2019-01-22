@@ -1,18 +1,18 @@
 {
-	"name": "validate-provider-number",
-	"version": "0.0.0",
-	"license": "MIT",
-	"repository": "medipass/validate-provider-number",
-	"scripts": {
-		"test": "jest"
-	},
-	"engines": {
-		"node": ">=4"
-	},
-	"files": [
-		"index.js"
-	],
-	"devDependencies": {
-		"jest": "23.6.0"
-	}
+  "name": "validate-provider-number",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "medipass/validate-provider-number",
+  "scripts": {
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "jest": "23.6.0"
+  }
 }
