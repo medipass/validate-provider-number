@@ -16,9 +16,9 @@ module.exports = function(providerNumber) {
   const match = providerNumber.match(re);
 
   if (match) {
-    const stem = padLeftZero(providerNumber.substring(0, providerNumber.length - 2), 6);
-    const locChar = providerNumber.charAt(providerNumber.length - 2);
-    const checkChar = providerNumber.charAt(providerNumber.length - 1);
+    const stem = padLeftZero(match[1], 6);
+    const locChar = match[2];
+    const checkChar = match[3];
 
     let sum = 0;
     stem.split('').forEach((item, index) => {
