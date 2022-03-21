@@ -12,6 +12,7 @@ function padLeftZero(n, len) {
 }
 
 module.exports = function(providerNumber) {
+  if (providerNumber && providerNumber.length > 8) return false;
   providerNumber = providerNumber.toUpperCase();
   const match = providerNumber.match(re);
 
