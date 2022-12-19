@@ -6,8 +6,8 @@
   "engines": {
     "node": "18"
   },
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "build:watch": "tsc -w",
