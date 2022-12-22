@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "CommonJS",
+      "moduleResolution": "Node",
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "rootDir": "src",
+      "baseUrl": "src",
+      "outDir": "dist",
+      "typeRoots": ["node_modules/@types", "types"],
+      "types": ["jest", "node"],
+      "forceConsistentCasingInFileNames": true,
+      "declaration": true
+    },
+    "include": ["src", "types"],
+    "exclude": [
+      "node_modules",
+    ]
+  }

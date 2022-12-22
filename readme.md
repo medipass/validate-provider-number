@@ -19,10 +19,17 @@ $ npm install validate-provider-number
 ## Usage
 
 ```js
+// Using commonjs
 const validateProviderNumber = require('validate-provider-number');
 
 validateProviderNumber('2429581T');
-// true
+// Returns true
+
+// Using ES modules
+import { validateProviderNumber } from 'validate-provider-number';
+
+validateProviderNumber('2429581T');
+// Returns true
 ```
 
 
