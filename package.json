@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": "medipass/validate-provider-number",
   "engines": {
-    "node": "^16"
+    "node": ">=16"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
