@@ -13,7 +13,10 @@
     "build:watch": "tsc -w",
     "check-types": "tsc --noEmit",
     "test": "jest",
-    "release": "pnpm run build && pnpm version from-git && pnpm publish"
+    "release:major": "pnpm run build && pnpm version major && pnpm publish",
+    "release:minor": "pnpm run build && pnpm version minor && pnpm publish",
+    "release:patch": "pnpm run build && pnpm version patch && pnpm publish",
+    "release:pre": "pnpm run build && pnpm version prerelease && pnpm publish"
   },
   "devDependencies": {
     "@types/jest": "29.2.4",
