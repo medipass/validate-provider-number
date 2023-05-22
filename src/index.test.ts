@@ -12,6 +12,10 @@ test("returns false for an invalid provider number (incorrect check digit)", () 
   expect(validateProviderNumber("2429582T")).toBeFalsy();
 });
 
+test("returns false for an invalid provider number (invalid leading stem character)", () => {
+  expect(validateProviderNumber("A200853K")).toBeFalsy();
+});
+
 test("returns false for an invalid provider number (no check digit)", () => {
   expect(validateProviderNumber("2429582")).toBeFalsy();
 });

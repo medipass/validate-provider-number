@@ -11,7 +11,7 @@
 const locationCharacters = "0123456789ABCDEFGHJKLMNPQRTUVWXY";
 const checkCharacters = "YXWTLKJHFBA";
 const re = new RegExp(
-  `(\\d{5,6})([${locationCharacters}])([${checkCharacters}])`
+  `^(\\d{5,6})([${locationCharacters}])([${checkCharacters}])$`
 );
 
 function padLeftZero(content: string, len: number) {
