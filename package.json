@@ -12,7 +12,8 @@
     "build": "tsc --project tsconfig.build.json",
     "build:watch": "tsc -w",
     "check-types": "tsc --noEmit",
-    "test": "jest"
+    "test": "jest",
+    "release": "pnpm run build && pnpm version from-git && pnpm publish"
   },
   "devDependencies": {
     "@types/jest": "29.2.4",
