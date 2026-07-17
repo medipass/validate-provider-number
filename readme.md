@@ -64,6 +64,18 @@ Type: `string`
 
 The Medibank provider number to validate.
 
+## Releasing
+
+Run releases from an up-to-date `master` branch with a clean working tree:
+
+```sh
+pnpm release:patch
+pnpm release:minor
+pnpm release:major
+```
+
+The release commands verify npm authentication, build the package, create and atomically push the version commit and tag, then publish to npm. If publishing fails after the Git push, fix the npm issue and run `pnpm publish` directly instead of rerunning the release command.
+
 ## License
 
 MIT © [Medipass](https://medipass.com.au)

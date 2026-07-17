@@ -13,10 +13,10 @@
     "build:watch": "tsc -w",
     "check-types": "tsc --noEmit",
     "test": "jest",
-    "release:major": "pnpm run build && pnpm version major && pnpm publish",
-    "release:minor": "pnpm run build && pnpm version minor && pnpm publish",
-    "release:patch": "pnpm run build && pnpm version patch && pnpm publish",
-    "release:pre": "pnpm run build && pnpm version prerelease && pnpm publish"
+    "release:major": "pnpm whoami && pnpm run build && pnpm version major && git push --atomic --follow-tags origin master && pnpm publish",
+    "release:minor": "pnpm whoami && pnpm run build && pnpm version minor && git push --atomic --follow-tags origin master && pnpm publish",
+    "release:patch": "pnpm whoami && pnpm run build && pnpm version patch && git push --atomic --follow-tags origin master && pnpm publish",
+    "release:pre": "pnpm whoami && pnpm run build && pnpm version prerelease && git push --atomic --follow-tags origin master && pnpm publish"
   },
   "devDependencies": {
     "@types/jest": "29.2.4",
