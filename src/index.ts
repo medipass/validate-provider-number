@@ -13,6 +13,9 @@ const checkCharacters = "YXWTLKJHFBA";
 const re = new RegExp(
   `^(\\d{5,6})([${locationCharacters}])([${checkCharacters}])$`
 );
+const medibankRe = new RegExp(
+  `^[A-Z](\\d{5}[${locationCharacters}][${checkCharacters}])$`
+);
 
 function padLeftZero(content: string, len: number) {
   if (content.length < len) {
@@ -60,7 +63,9 @@ export const validateProviderNumber = (providerNumber: string) => {
     return false;
   }
 
-  const [_, stemMatch, locationMatch, checkMatch] = matchGroups;
+  const stemMatch = matchGroups[1];
+  const locationMatch = matchGroups[2];
+  const checkMatch = matchGroups[3];
 
   const stem = padLeftZero(stemMatch, 6);
 
@@ -70,6 +75,23 @@ export const validateProviderNumber = (providerNumber: string) => {
   const remainder = (stemSum + plvSum) % 11;
 
   return checkMatch === checkCharacters.charAt(remainder);
+};
+
+/**
+ * Returns whether the provided string is a valid Medibank provider number.
+ *
+ * Medibank provider numbers prepend a profession character to a seven-character
+ * provider number that uses the Medicare checksum algorithm.
+ */
+export const validateMedibankProviderNumber = (providerNumber: string) => {
+  const matchGroups = providerNumber.toUpperCase().match(medibankRe);
+  if (!matchGroups) {
+    return false;
+  }
+
+  const providerNumberMatch = matchGroups[1];
+
+  return validateProviderNumber(providerNumberMatch);
 };
 
 export default validateProviderNumber;
